@@ -1,0 +1,40 @@
+Subject: E-Mail with attachments
+From: Alice <alice@mail.example>
+To: Bob <bob@mail.example>
+Date: 2023-01-30 18:19:20 +0100
+Content-Type: multipart/mixed; boundary="000000000000e4c0b105f3036e61"
+
+--000000000000e4c0b105f3036e61
+Content-Type: multipart/alternative; boundary="------------BDPRzNay0xx6CZpCi7aa0n10"
+
+This is a multi-part message in MIME format.
+--------------BDPRzNay0xx6CZpCi7aa0n10
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Dear Bob,
+
+this is a message for testing purposes.
+
+Sincerely,
+Alice
+
+--------------BDPRzNay0xx6CZpCi7aa0n10
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Dear Bob,</p>
+<p>this is a message for testing purposes.</p>
+<p>Sincerly,<br>Alice</p>
+--------------BDPRzNay0xx6CZpCi7aa0n10--
+--000000000000e4c0b105f3036e61
+Content-Type: application/pdf; charset="UTF-8"; name="attachment.pdf"
+Content-Disposition: attachment; filename="attachment.pdf"
+
+PDF binary data
+--000000000000e4c0b105f3036e61
+Content-Type: image/png; charset="UTF-8"; name="image.png"
+Content-Disposition: attachment; filename="image.png"
+
+Image binary data
+--000000000000e4c0b105f3036e61--

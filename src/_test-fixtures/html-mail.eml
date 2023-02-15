@@ -1,0 +1,28 @@
+Subject: Test E-Mail subject
+From: Alice <alice@mail.example>
+To: Bob <bob@mail.example>
+Date: 2023-01-30 18:19:20 +0100
+Content-Type: multipart/alternative;
+ boundary="------------BDPRzNay0xx6CZpCi7aa0n10"
+Message-ID: <caecc60b-356c-4ca3-948c-510f0c99d0aa@mail.examlpe>
+
+This is a multi-part message in MIME format.
+--------------BDPRzNay0xx6CZpCi7aa0n10
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Dear Bob,
+
+this is a plain text message for testing purposes.
+
+Sincerely,
+Alice
+
+--------------BDPRzNay0xx6CZpCi7aa0n10
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Dear Bob,</p>
+<p>this is a html message for testing purposes.</p>
+<p>Sincerly,<br>Alice</p>
+--------------BDPRzNay0xx6CZpCi7aa0n10--

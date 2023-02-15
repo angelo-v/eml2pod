@@ -1,0 +1,12 @@
+Subject: Test E-Mail subject
+From: Alice <alice@mail.example>
+To: Bob <bob@mail.example>
+Date: 2023-01-30 18:19:20 +0100
+Content-Type: text/plain
+
+Dear Bob,
+
+this is a message for testing purposes.
+
+Sincerely,
+Alice

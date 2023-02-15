@@ -1,0 +1,51 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16 ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+      - name: Save build
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: |
+            dist/
+            bin/
+            package.json
+          retention-days: 1
+
+  npm-release-latest:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: build
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - uses: JS-DevTools/npm-publish@v1
+        name: Release
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          tag: latest
+

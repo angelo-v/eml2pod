@@ -1,0 +1,2 @@
+- [x] handle attachments with blanks in filename
+- [ ] also export  plain text mails
